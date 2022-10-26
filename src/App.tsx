@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useAppSelector } from "./redux/hooks/useAppSelector";
 
 function App() {
+  const user = useAppSelector((state) => state.user);
+  //Para acessar o reducer que ta no store usando o useSelector personalizado do arquivo useAppSelector.ts
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      Meu nome é: {user.name} e tenho {user.age} anos.
+      <br />
+      Tema: ...
+      <hr />
+      <input type="text" value={user.name} />
+      <hr />
+      <button>Mudar Tema</button>
     </div>
   );
 }
