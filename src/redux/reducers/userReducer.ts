@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const slice = createSlice({
   name: "user", //nome do slice
   initialState: {
-    name: "joao",
-    age: 24,
+    name: "",
+    age: 0,
   }, //dados iniciais do slice
   reducers: {
     setName: (state, action) => {
@@ -16,6 +16,6 @@ export const slice = createSlice({
   }, //actions disponíveis
 }); //name, initialState e reducers são nomes orbigatórios, slice posso mudar.
 
-export const { setName, setAge } = slice.actions;
+export const { setName, setAge } = slice.actions; //exportando as actions
 
-export default slice.reducer;
+export default slice.reducer; //exportando o reducer
